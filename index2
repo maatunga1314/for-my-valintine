@@ -1,0 +1,77 @@
+:root {
+    --pink: #ffafbd;
+    --red: #ff4b2b;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hidden { display: none; }
+
+h1 { font-size: 3rem; color: #d63384; }
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#yesBtn { background-color: #ff4b2b; color: white; }
+#noBtn { background-color: #ccc; color: #333; position: relative; }
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.photo {
+    width: 100%;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Animations */
+.fade-in { animation: fadeIn 2s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.heart-loader {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: var(--red);
+    transform: rotate(45deg);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: rotate(45deg) scale(1); }
+    to { transform: rotate(45deg) scale(1.2); }
+}
